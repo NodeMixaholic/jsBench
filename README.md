@@ -79,7 +79,7 @@ function createAndFindHashes() {
 //an array of 40000 random hashes
 let hashes = [];
 for (let i = 0; i < 40000; i++) {
-    hashes.push(Number(`${Math.random() * 690000}`).toString('hex'));
+    hashes.push(Number(`${Math.random() * 690000}`).toString(16));
 }
 
 //get a random hash
