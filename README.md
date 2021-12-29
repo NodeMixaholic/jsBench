@@ -68,7 +68,7 @@ if (found) {
 
 }
 
-let hashesBig = await jsBench(createAndMedian);
+let hashesBig = await jsBench(createAndFindHashes);
 console.log(hashesBig)
 ```
 
@@ -95,6 +95,6 @@ if (found) {
 
 }
 
-let hashes = await jsBench(createAndMedian);
+let hashes = await jsBench(createAndFindHashes);
 console.log(hashes)
 ```
