@@ -59,7 +59,7 @@ for (let i = 0; i < 6900000; i++) {
 let hash = hashes[Math.floor(Math.random() * hashes.length)];
 
 //check if the hash is in the array
-let found = hashes.indexOf(hash) > -1;
+let found = hashes.includes(hash)
 
 //if found, print the hash
 if (found) {
