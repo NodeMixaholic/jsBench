@@ -47,11 +47,36 @@ console.log(caf)
 
 ## Example to benchmark: Create an array of 6900000 hashes, sanely find one.
 ```
-
+let crypto = require('crypto');
 function createAndFindHashes() {
 //an array of 6900000 random hashes
 let hashes = [];
 for (let i = 0; i < 6900000; i++) {
+    hashes.push(crypto.randomBytes(20).toString('hex'));
+}
+
+//get a random hash
+let hash = hashes[Math.floor(Math.random() * hashes.length)];
+
+//check if the hash is in the array
+let found = hashes.includes(hash)
+
+//if found, print the hash
+if (found) {
+    console.log(`${hash} was found!`);
+}
+
+}
+```
+
+## Same as above, except with 40k hashes
+
+```
+let crypto = require('crypto');
+function createAndFindHashes() {
+//an array of 40000 random hashes
+let hashes = [];
+for (let i = 0; i < 40000; i++) {
     hashes.push(crypto.randomBytes(20).toString('hex'));
 }
 
