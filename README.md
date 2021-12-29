@@ -45,7 +45,7 @@ let caf = await jsBench(createAndFind);
 console.log(caf)
 ```
 
-## Example to benchmark: Create an array of 6900000 hashes, sanely find one.
+## Example to benchmark: Create an array of 6900000 hashes, sanely find one. (NodeJS only)
 ```
 let crypto = require('crypto');
 function createAndFindHashes() {
@@ -72,15 +72,14 @@ let hashesBig = await jsBench(createAndMedian);
 console.log(hashesBig)
 ```
 
-## Same as above, except with 40k hashes
+## Same as above, except with 40k hashes and compatible with Vanilla JS
 
 ```
-let crypto = require('crypto');
 function createAndFindHashes() {
 //an array of 40000 random hashes
 let hashes = [];
 for (let i = 0; i < 40000; i++) {
-    hashes.push(crypto.randomBytes(20).toString('hex'));
+    hashes.push(Number(`${Math.random() * 690000}`).toString('hex'));
 }
 
 //get a random hash
