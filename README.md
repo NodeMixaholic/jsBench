@@ -44,3 +44,27 @@ function createAndFind() {
 let caf = await jsBench(createAndFind);
 console.log(caf)
 ```
+
+## Example to benchmark: Create an array of 6900000 hashes, sanely find one.
+```
+
+function createAndFindHashes() {
+//an array of 6900000 random hashes
+let hashes = [];
+for (let i = 0; i < 6900000; i++) {
+    hashes.push(crypto.randomBytes(20).toString('hex'));
+}
+
+//get a random hash
+let hash = hashes[Math.floor(Math.random() * hashes.length)];
+
+//check if the hash is in the array
+let found = hashes.indexOf(hash) > -1;
+
+//if found, print the hash
+if (found) {
+    console.log(`${hash} was found!`);
+}
+
+}
+```
