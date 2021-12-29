@@ -67,6 +67,9 @@ if (found) {
 }
 
 }
+
+let hashesBig = await jsBench(createAndMedian);
+console.log(hashesBig)
 ```
 
 ## Same as above, except with 40k hashes
@@ -92,4 +95,7 @@ if (found) {
 }
 
 }
+
+let hashes = await jsBench(createAndMedian);
+console.log(hashes)
 ```
